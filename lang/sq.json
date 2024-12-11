@@ -16,7 +16,7 @@
         "OverwriteLogFiles": "Mbishkruani kartelat regjistër “matomo.php” që të prodhohen vizita gjoja në formatin “Apache combined log” (ndryshoni ose shtoni kartela te %s). Zhvilluesit e shtojcave i shtojnë kartelat e tyre si kartela '*.log' brenda një dosjeje 'data' të shtojcës së tyre.",
         "PleaseBePatient": "Prodhimi i vizitave dhe veprimeve mund të dojë ca minuta.",
         "PluginDescription": "Krijoni vizita dhe veprime gjoja në Matomo. Prodhoni të dhëna gjoja, për të populluar me to raporte Matomo.",
-        "ReRunArchiveScript": "Ju lutemi, rixhironi urdhrin crontab './console core:archive', që të rifreskohen raportet, sipas %1$s“Si të udjiset arkivimi i automatizuar i raporteve tuaja”%2$s",
+        "ReRunArchiveScript": "Ju lutemi, rixhironi urdhrin crontab './console core:archive', që të rifreskohen raportet, sipas %1$s“Si të ujdiset arkivimi i automatizuar i raporteve tuaja”%2$s",
         "SelectWebsite": "Përzgjidhni sajt",
         "Submit": "Parashtroje",
         "VisitorGenerator": "Prodhues Vizitorësh",

@@ -15,11 +15,11 @@
         "NumberOfGeneratedActions": "Nombre d'actions générées",
         "OverwriteLogFiles": "Vous pouvez écraser les fichiers de log \"matomo.php\" au format \"log combiné Apache\" utilisés pour générer les visites factices (modifier ou ajouter des fichiers dans %s). Les développeurs de composants additionnels peuvent fournir leurs propres fichiers de log '*.log' dans un répertoire 'data' au sein de leur composant.",
         "PleaseBePatient": "Générer des visites et des actions peut prendre quelques minutes.",
-        "PluginDescription": "Créer des visites et actions de test dans Matomo. Générer des données simulées pour remplir les rapports Matomo.",
+        "PluginDescription": "Crée des visites et actions de test dans Matomo. Génére des données simulées pour remplir les rapports Matomo.",
         "ReRunArchiveScript": "Veuillez exécuter à nouveau la tâche planifiée crontab './console core:archive' afin de rafraîchir les rapports, comme le prévoit la documentation %1$s\"Comment mettre en place l'archivage automatique de vos rapports\"%2$s",
         "SelectWebsite": "Sélectionner le site Web",
         "Submit": "Soumettre",
         "VisitorGenerator": "Générateur de visites",
-        "Warning": "Vous êtes sur le point de générer des visites factices qui seront enregistrées dans votre base de donnés Matomo."
+        "Warning": "Vous êtes sur le point de générer des visites factices qui seront enregistrées dans votre base de données Matomo."
     }
 }

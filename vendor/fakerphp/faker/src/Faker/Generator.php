@@ -584,7 +584,7 @@ class Generator
         if (!$this->container->has($id)) {
             throw new Extension\ExtensionNotFound(sprintf(
                 'No Faker extension with id "%s" was loaded.',
-                $id,
+                $id
             ));
         }
 

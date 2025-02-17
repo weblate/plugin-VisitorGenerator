@@ -77,15 +77,7 @@ final class Color implements Extension\ColorExtension
     {
         $color = str_pad(dechex($this->numberExtension->numberBetween(0, 255)), 3, '0', STR_PAD_LEFT);
 
-        return sprintf(
-            '#%s%s%s%s%s%s',
-            $color[0],
-            $color[0],
-            $color[1],
-            $color[1],
-            $color[2],
-            $color[2],
-        );
+        return sprintf('#%s%s%s%s%s%s', $color[0], $color[0], $color[1], $color[1], $color[2], $color[2]);
     }
 
     /**
@@ -117,10 +109,7 @@ final class Color implements Extension\ColorExtension
      */
     public function rgbCssColor(): string
     {
-        return sprintf(
-            'rgb(%s)',
-            $this->rgbColor(),
-        );
+        return sprintf('rgb(%s)', $this->rgbColor());
     }
 
     /**
@@ -128,11 +117,7 @@ final class Color implements Extension\ColorExtension
      */
     public function rgbaCssColor(): string
     {
-        return sprintf(
-            'rgba(%s,%s)',
-            $this->rgbColor(),
-            $this->numberExtension->randomFloat(1, 0, 1),
-        );
+        return sprintf('rgba(%s,%s)', $this->rgbColor(), $this->numberExtension->randomFloat(1, 0, 1));
     }
 
     /**
@@ -156,12 +141,7 @@ final class Color implements Extension\ColorExtension
      */
     public function hslColor(): string
     {
-        return sprintf(
-            '%s,%s,%s',
-            $this->numberExtension->numberBetween(0, 360),
-            $this->numberExtension->numberBetween(0, 100),
-            $this->numberExtension->numberBetween(0, 100),
-        );
+        return sprintf('%s,%s,%s', $this->numberExtension->numberBetween(0, 360), $this->numberExtension->numberBetween(0, 100), $this->numberExtension->numberBetween(0, 100));
     }
 
     /**

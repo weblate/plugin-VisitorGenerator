@@ -25,10 +25,7 @@ final class ContainerBuilder
     public function add(string $id, $definition): self
     {
         if (!is_string($definition) && !is_callable($definition) && !is_object($definition)) {
-            throw new \InvalidArgumentException(sprintf(
-                'First argument to "%s::add()" must be a string, callable or object.',
-                self::class,
-            ));
+            throw new \InvalidArgumentException(sprintf('First argument to "%s::add()" must be a string, callable or object.', self::class));
         }
 
         $this->definitions[$id] = $definition;

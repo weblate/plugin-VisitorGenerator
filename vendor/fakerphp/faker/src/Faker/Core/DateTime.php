@@ -77,20 +77,14 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
 
     public function dateTime($until = 'now', ?string $timezone = null): \DateTime
     {
-        return $this->setTimezone(
-            $this->getTimestampDateTime($this->unixTime($until)),
-            $timezone,
-        );
+        return $this->setTimezone($this->getTimestampDateTime($this->unixTime($until)), $timezone);
     }
 
     public function dateTimeAD($until = 'now', ?string $timezone = null): \DateTime
     {
         $min = (PHP_INT_SIZE > 4) ? -62135597361 : -PHP_INT_MAX;
 
-        return $this->setTimezone(
-            $this->getTimestampDateTime($this->generator->numberBetween($min, $this->getTimestamp($until))),
-            $timezone,
-        );
+        return $this->setTimezone($this->getTimestampDateTime($this->generator->numberBetween($min, $this->getTimestamp($until))), $timezone);
     }
 
     public function dateTimeBetween($from = '-30 years', $until = 'now', ?string $timezone = null): \DateTime
@@ -104,10 +98,7 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
 
         $timestamp = $this->generator->numberBetween($start, $end);
 
-        return $this->setTimezone(
-            $this->getTimestampDateTime($timestamp),
-            $timezone,
-        );
+        return $this->setTimezone($this->getTimestampDateTime($timestamp), $timezone);
     }
 
     public function dateTimeInInterval($from = '-30 years', string $interval = '+5 days', ?string $timezone = null): \DateTime

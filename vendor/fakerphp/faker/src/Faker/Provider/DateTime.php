@@ -55,10 +55,7 @@ class DateTime extends Base
      */
     public static function dateTime($max = 'now', $timezone = null)
     {
-        return static::setTimezone(
-            new \DateTime('@' . static::unixTime($max)),
-            $timezone,
-        );
+        return static::setTimezone(new \DateTime('@' . static::unixTime($max)), $timezone);
     }
 
     /**
@@ -78,10 +75,7 @@ class DateTime extends Base
     {
         $min = (PHP_INT_SIZE > 4 ? -62135597361 : -PHP_INT_MAX);
 
-        return static::setTimezone(
-            new \DateTime('@' . self::numberBetween($min, static::getMaxTimestamp($max))),
-            $timezone,
-        );
+        return static::setTimezone(new \DateTime('@' . self::numberBetween($min, static::getMaxTimestamp($max))), $timezone);
     }
 
     /**
@@ -154,10 +148,7 @@ class DateTime extends Base
 
         $timestamp = self::numberBetween($startTimestamp, $endTimestamp);
 
-        return static::setTimezone(
-            new \DateTime('@' . $timestamp),
-            $timezone,
-        );
+        return static::setTimezone(new \DateTime('@' . $timestamp), $timezone);
     }
 
     /**
@@ -186,11 +177,7 @@ class DateTime extends Base
         $begin = min($datetime, $otherDatetime);
         $end = $datetime === $begin ? $otherDatetime : $datetime;
 
-        return static::dateTimeBetween(
-            $begin,
-            $end,
-            $timezone,
-        );
+        return static::dateTimeBetween($begin, $end, $timezone);
     }
 
     /**

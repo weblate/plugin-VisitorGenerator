@@ -108,11 +108,7 @@ class Populator
             $generateId = $this->generateId[$class];
 
             for ($i = 0; $i < $number; ++$i) {
-                $insertedEntities[$class][] = $this->entities[$class]->execute(
-                    $entityManager,
-                    $insertedEntities,
-                    $generateId,
-                );
+                $insertedEntities[$class][] = $this->entities[$class]->execute($entityManager, $insertedEntities, $generateId);
 
                 if (count($insertedEntities) % $this->batchSize === 0) {
                     $entityManager->flush();

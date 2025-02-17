@@ -203,22 +203,13 @@ class Base
         }
 
         if (!is_array($elements)) {
-            throw new \InvalidArgumentException(sprintf(
-                'Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.',
-                \UnitEnum::class,
-                \Traversable::class,
-                is_object($array) ? get_class($array) : gettype($array),
-            ));
+            throw new \InvalidArgumentException(sprintf('Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.', \UnitEnum::class, \Traversable::class, is_object($array) ? get_class($array) : gettype($array)));
         }
 
         $numberOfElements = count($elements);
 
         if (!$allowDuplicates && null !== $count && $numberOfElements < $count) {
-            throw new \LengthException(sprintf(
-                'Cannot get %d elements, only %d in array',
-                $count,
-                $numberOfElements,
-            ));
+            throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numberOfElements));
         }
 
         if (null === $count) {
@@ -277,12 +268,7 @@ class Base
         }
 
         if (!is_array($elements)) {
-            throw new \InvalidArgumentException(sprintf(
-                'Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.',
-                \UnitEnum::class,
-                \Traversable::class,
-                is_object($array) ? get_class($array) : gettype($array),
-            ));
+            throw new \InvalidArgumentException(sprintf('Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.', \UnitEnum::class, \Traversable::class, is_object($array) ? get_class($array) : gettype($array)));
         }
 
         $randomElements = static::randomElements($elements, 1);

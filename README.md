@@ -70,9 +70,8 @@ This plugin had its vendored dependencies made compatible with Matomo's minimum 
 use Rector\Config\RectorConfig;
 
 return static function (RectorConfig $rectorConfig): void {
-    // Matomo requires PHP >= 7.2.5, but PHP 7.3 is close enough. We don't want to downgrade further than necessary.
     $rectorConfig->sets([
-        \Rector\Set\ValueObject\DowngradeLevelSetList::DOWN_TO_PHP_73
+        \Rector\Set\ValueObject\DowngradeLevelSetList::DOWN_TO_PHP_72
     ]);
 
     $rectorConfig->skip([
@@ -82,7 +81,7 @@ return static function (RectorConfig $rectorConfig): void {
 ```
 With all that in place, you should be able to run Rector like so: `vendor/bin/rector process {path_to_this_plugin/vendor} --config={path_to_config_file}`
 
-> **_NOTE:_**  For Matomo developers, there's an internal DevPluginCommands plugin with a command that handles running Rector. Just make sure to use the `skip-scoping` option. See the SearchEngineKeywordsPerformance plugin's README.md for more details.
+> **_NOTE:_**  For Matomo developers, there's an internal DevPluginCommands plugin with a command that handles running Rector. Just make sure to use the `skip-scoping` option. Also make sure to downgrade to PHP 7.2 because all other plugins use 7.3. See the SearchEngineKeywordsPerformance plugin's README.md for more details.
 
 ### Legalnotice
 

@@ -39,8 +39,9 @@ class Payment extends \Faker\Provider\Payment
         return sprintf(
             '%s%d%d',
             $prefix,
-            self::randomNumber(5, true), // workaround for mt_getrandmax() limitation
-            self::randomNumber(self::randomElement([4, 5]), true),
+            self::randomNumber(5, true),
+            // workaround for mt_getrandmax() limitation
+            self::randomNumber(self::randomElement([4, 5]), true)
         );
     }
 }

@@ -134,12 +134,7 @@ class Color extends Base
      */
     public static function hslColor()
     {
-        return sprintf(
-            '%s,%s,%s',
-            self::numberBetween(0, 360),
-            self::numberBetween(0, 100),
-            self::numberBetween(0, 100),
-        );
+        return sprintf('%s,%s,%s', self::numberBetween(0, 360), self::numberBetween(0, 100), self::numberBetween(0, 100));
     }
 
     /**

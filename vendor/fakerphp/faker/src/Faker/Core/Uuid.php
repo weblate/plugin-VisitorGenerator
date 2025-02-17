@@ -50,19 +50,6 @@ final class Uuid implements Extension\UuidExtension
         $tHi |= (3 << 12);
 
         // cast to string
-        return sprintf(
-            '%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x',
-            $tLo,
-            $tMi,
-            $tHi,
-            $csHi,
-            $csLo,
-            $byte[10],
-            $byte[11],
-            $byte[12],
-            $byte[13],
-            $byte[14],
-            $byte[15],
-        );
+        return sprintf('%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x', $tLo, $tMi, $tHi, $csHi, $csLo, $byte[10], $byte[11], $byte[12], $byte[13], $byte[14], $byte[15]);
     }
 }

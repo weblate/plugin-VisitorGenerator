@@ -52,21 +52,13 @@ class Image extends Base
         $gray = false,
         $format = 'png'
     ) {
-        trigger_deprecation(
-            'fakerphp/faker',
-            '1.20',
-            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead',
-        );
+        trigger_deprecation('fakerphp/faker', '1.20', 'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead');
 
         // Validate image format
         $imageFormats = static::getFormats();
 
         if (!in_array(strtolower($format), $imageFormats, true)) {
-            throw new \InvalidArgumentException(sprintf(
-                'Invalid image format "%s". Allowable formats are: %s',
-                $format,
-                implode(', ', $imageFormats),
-            ));
+            throw new \InvalidArgumentException(sprintf('Invalid image format "%s". Allowable formats are: %s', $format, implode(', ', $imageFormats)));
         }
 
         $size = sprintf('%dx%d.%s', $width, $height, $format);
@@ -87,13 +79,7 @@ class Image extends Base
 
         $backgroundColor = $gray === true ? 'CCCCCC' : str_replace('#', '', Color::safeHexColor());
 
-        return sprintf(
-            '%s/%s/%s%s',
-            self::BASE_URL,
-            $size,
-            $backgroundColor,
-            count($imageParts) > 0 ? '?text=' . urlencode(implode(' ', $imageParts)) : '',
-        );
+        return sprintf('%s/%s/%s%s', self::BASE_URL, $size, $backgroundColor, count($imageParts) > 0 ? '?text=' . urlencode(implode(' ', $imageParts)) : '');
     }
 
     /**
@@ -116,11 +102,7 @@ class Image extends Base
         $gray = false,
         $format = 'png'
     ) {
-        trigger_deprecation(
-            'fakerphp/faker',
-            '1.20',
-            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead',
-        );
+        trigger_deprecation('fakerphp/faker', '1.20', 'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead');
 
         $dir = null === $dir ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
 
@@ -170,22 +152,14 @@ class Image extends Base
 
     public static function getFormats(): array
     {
-        trigger_deprecation(
-            'fakerphp/faker',
-            '1.20',
-            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead',
-        );
+        trigger_deprecation('fakerphp/faker', '1.20', 'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead');
 
         return array_keys(static::getFormatConstants());
     }
 
     public static function getFormatConstants(): array
     {
-        trigger_deprecation(
-            'fakerphp/faker',
-            '1.20',
-            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead',
-        );
+        trigger_deprecation('fakerphp/faker', '1.20', 'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead');
 
         return [
             static::FORMAT_JPG => constant('IMAGETYPE_JPEG'),

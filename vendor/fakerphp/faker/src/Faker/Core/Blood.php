@@ -33,10 +33,6 @@ final class Blood implements Extension\BloodExtension
 
     public function bloodGroup(): string
     {
-        return sprintf(
-            '%s%s',
-            $this->bloodType(),
-            $this->bloodRh(),
-        );
+        return sprintf('%s%s', $this->bloodType(), $this->bloodRh());
     }
 }

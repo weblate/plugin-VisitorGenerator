@@ -32,14 +32,7 @@ final class Version implements Extension\VersionExtension
      */
     public function semver(bool $preRelease = false, bool $build = false): string
     {
-        return sprintf(
-            '%d.%d.%d%s%s',
-            $this->numberExtension->numberBetween(0, 9),
-            $this->numberExtension->numberBetween(0, 99),
-            $this->numberExtension->numberBetween(0, 99),
-            $preRelease && $this->numberExtension->numberBetween(0, 1) === 1 ? '-' . $this->semverPreReleaseIdentifier() : '',
-            $build && $this->numberExtension->numberBetween(0, 1) === 1 ? '+' . $this->semverBuildIdentifier() : '',
-        );
+        return sprintf('%d.%d.%d%s%s', $this->numberExtension->numberBetween(0, 9), $this->numberExtension->numberBetween(0, 99), $this->numberExtension->numberBetween(0, 99), $preRelease && $this->numberExtension->numberBetween(0, 1) === 1 ? '-' . $this->semverPreReleaseIdentifier() : '', $build && $this->numberExtension->numberBetween(0, 1) === 1 ? '+' . $this->semverBuildIdentifier() : '');
     }
 
     /**

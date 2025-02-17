@@ -12,7 +12,10 @@ use Faker\Extension;
  */
 final class Barcode implements Extension\BarcodeExtension
 {
-    private Extension\NumberExtension $numberExtension;
+    /**
+     * @var \Faker\Extension\NumberExtension
+     */
+    private $numberExtension;
 
     public function __construct(?Extension\NumberExtension $numberExtension = null)
     {

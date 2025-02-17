@@ -12,11 +12,14 @@ use Faker\Provider\DateTime;
  */
 final class Version implements Extension\VersionExtension
 {
-    private Extension\NumberExtension $numberExtension;
+    /**
+     * @var \Faker\Extension\NumberExtension
+     */
+    private $numberExtension;
     /**
      * @var string[]
      */
-    private array $semverCommonPreReleaseIdentifiers = ['alpha', 'beta', 'rc'];
+    private $semverCommonPreReleaseIdentifiers = ['alpha', 'beta', 'rc'];
 
     public function __construct(?Extension\NumberExtension $numberExtension = null)
     {

@@ -9,7 +9,10 @@ use Faker\Extension;
  */
 final class Uuid implements Extension\UuidExtension
 {
-    private Extension\NumberExtension $numberExtension;
+    /**
+     * @var \Faker\Extension\NumberExtension
+     */
+    private $numberExtension;
 
     public function __construct(?Extension\NumberExtension $numberExtension = null)
     {

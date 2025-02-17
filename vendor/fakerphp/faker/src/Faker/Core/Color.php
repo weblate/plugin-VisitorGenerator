@@ -12,12 +12,15 @@ use Faker\Extension\Helper;
  */
 final class Color implements Extension\ColorExtension
 {
-    private Extension\NumberExtension $numberExtension;
+    /**
+     * @var \Faker\Extension\NumberExtension
+     */
+    private $numberExtension;
 
     /**
      * @var string[]
      */
-    private array $safeColorNames = [
+    private $safeColorNames = [
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
         'gray', 'yellow', 'fuchsia', 'aqua', 'white',
@@ -25,7 +28,7 @@ final class Color implements Extension\ColorExtension
     /**
      * @var string[]
      */
-    private array $allColorNames = [
+    private $allColorNames = [
         'AliceBlue', 'AntiqueWhite', 'Aqua', 'Aquamarine',
         'Azure', 'Beige', 'Bisque', 'Black', 'BlanchedAlmond',
         'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',

@@ -41,7 +41,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * @var array<int, string> Swedish mobile number formats
      */
-    protected static array $mobileFormats = [
+    protected static $mobileFormats = [
         '+467########',
         '+46(0)7########',
         '+46 (0)7## ## ## ##',

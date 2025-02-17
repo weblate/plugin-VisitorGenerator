@@ -15,7 +15,7 @@ final class ContainerBuilder
     /**
      * @var array<string, callable|object|string>
      */
-    private array $definitions = [];
+    private $definitions = [];
 
     /**
      * @param callable|object|string $definition

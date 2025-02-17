@@ -62,6 +62,27 @@ cd wp-content/plugins/matomo/app
 ./console  visitorgenerator:generate-visits --idsite=1
 ```
 
+## Dependencies
+This plugin had its vendored dependencies made compatible with Matomo's minimum supported version of PHP using the [Rector library](https://github.com/rectorphp/rector-downgrade-php). It's preferable that you install the composer package in a separate project and point to this project so that it doesn't get committed in this project. You should also have a config file saved containing the following:
+```php
+<?php
+
+use Rector\Config\RectorConfig;
+
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->sets([
+        \Rector\Set\ValueObject\DowngradeLevelSetList::DOWN_TO_PHP_72
+    ]);
+
+    $rectorConfig->skip([
+        \Rector\DowngradePhp80\Rector\Class_\DowngradeAttributeToAnnotationRector::class
+    ]);
+};
+```
+With all that in place, you should be able to run Rector like so: `vendor/bin/rector process {path_to_this_plugin/vendor} --config={path_to_config_file}`
+
+> **_NOTE:_**  For Matomo developers, there's an internal DevPluginCommands plugin with a command that handles running Rector. Just make sure to use the `skip-scoping` option. Also make sure to downgrade to PHP 7.2 because all other plugins use 7.3. See the SearchEngineKeywordsPerformance plugin's README.md for more details.
+
 ### Legalnotice
 
 This plugin is released under the GPLv3+ license.
